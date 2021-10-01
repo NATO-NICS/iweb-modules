@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (c) 2008-2021, Massachusetts Institute of Technology (MIT)
+    All rights reserved.
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions are met:
+
+    1. Redistributions of source code must retain the above copyright notice, this
+    list of conditions and the following disclaimer.
+
+    2. Redistributions in binary form must reproduce the above copyright notice,
+    this list of conditions and the following disclaimer in the documentation
+    and/or other materials provided with the distribution.
+
+    3. Neither the name of the copyright holder nor the names of its contributors
+    may be used to endorse or promote products derived from this software without
+    specific prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+    AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+    IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+    DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+    FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+    DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+    SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+    CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+    OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+    OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>edu.mit.ll.iweb</groupId>
+  <artifactId>iweb-modules</artifactId>
+  <version>7.0.9-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>iWeb Modules</name>
+  <description>
+    Integrated Web Extensible Bundle (IWEB) JavaScript Extensible Modules (JEMs) provides a core view,
+    client-side pub/sub, a server-side RabbitMQ connection as well as several common JavaScript modules.
+  </description>
+  <url>https://github.com/NATO-NICS/iweb-modules</url>
+  <inceptionYear></inceptionYear>
+
+
+  <properties>
+    <!-- Dependency Versions -->
+    <atmosphereVersion>2.5.13</atmosphereVersion>
+    <camelVersion>3.0.1</camelVersion>
+    <commonsBeanutilsVersion>1.9.4</commonsBeanutilsVersion>
+    <commonsCollections4Version>4.4</commonsCollections4Version>
+    <commonsConfiguration2Version>2.6</commonsConfiguration2Version>
+    <javaxInjectVersion>1</javaxInjectVersion>
+    <jerseyVersion>2.30</jerseyVersion>
+    <logbackVersion>1.2.3</logbackVersion>
+    <servletApiVersion>4.0.1</servletApiVersion>
+    <websocketApiVersion>1.1</websocketApiVersion>
+
+    <!-- Internal Dependencies -->
+    <!-- NONE -->
+
+    <!-- Plugin Versions -->
+    <licenseMavenPluginVersion>3.0</licenseMavenPluginVersion>
+    <mavenCompilerPluginVersion>3.8.1</mavenCompilerPluginVersion>
+
+    <!-- Project Properties -->
+    <javaSourceVersion>1.8</javaSourceVersion>
+    <javaTargetVersion>1.8</javaTargetVersion>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+
+  <modules>
+    <module>core</module>
+    <module>core-view</module>
+    <module>map</module>
+    <module>draw-menu</module>
+    <module>geocode</module>
+    <module>logger</module>
+  </modules>
+
+
+  <dependencyManagement>
+    <dependencies>
+	    <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+        <version>${logbackVersion}</version>
+      </dependency>
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>${servletApiVersion}</version>
+      </dependency>
+      <dependency>
+        <groupId>javax.websocket</groupId>
+        <artifactId>javax.websocket-api</artifactId>
+        <version>${websocketApiVersion}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-configuration2</artifactId>
+        <version>${commonsConfiguration2Version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-collections4</artifactId>
+        <version>${commonsCollections4Version}</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-beanutils</groupId>
+        <artifactId>commons-beanutils</artifactId>
+        <version>${commonsBeanutilsVersion}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.atmosphere</groupId>
+        <artifactId>atmosphere-runtime</artifactId>
+        <version>${atmosphereVersion}</version>
+      </dependency>
+      <dependency>
+       <groupId>org.glassfish.jersey.core</groupId>
+       <artifactId>jersey-client</artifactId>
+       <version>${jerseyVersion}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.glassfish.jersey.inject</groupId>
+        <artifactId>jersey-hk2</artifactId>
+        <version>${jerseyVersion}</version>
+      </dependency>
+      <dependency>
+       <groupId>org.glassfish.jersey.media</groupId>
+       <artifactId>jersey-media-json-jackson</artifactId>
+       <version>${jerseyVersion}</version>
+      </dependency>
+      <dependency>
+        <groupId>javax.inject</groupId>
+        <artifactId>javax.inject</artifactId>
+        <version>${javaxInjectVersion}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.camel</groupId>
+        <artifactId>camel-core-engine</artifactId>
+        <version>${camelVersion}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.camel</groupId>
+        <artifactId>camel-rabbitmq</artifactId>
+        <version>${camelVersion}</version>
+      </dependency>
+      <dependency>
+        <groupId>edu.mit.ll.nics.common</groupId>
+        <artifactId>rabbitmq-client</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/js</directory>
+        <targetPath>META-INF/resources/js</targetPath>
+      </resource>
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+    </resources>
+
+    <pluginManagement>
+      <plugins>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${mavenCompilerPluginVersion}</version>
+          <configuration>
+            <source>${javaSourceVersion}</source>
+            <target>${javaTargetVersion}</target>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <!-- This plugin formats source files by checking and adding a copyright
+              header if it's missing. -->
+          <groupId>com.mycila</groupId>
+          <artifactId>license-maven-plugin</artifactId>
+          <version>${licenseMavenPluginVersion}</version>
+          <configuration>
+            <aggregate>true</aggregate>
+            <header>${basedir}/copyright.txt</header>
+            <strictCheck>true</strictCheck>
+            <properties>
+              <year>2021</year>
+            </properties>
+            <useDefaultExcludes>false</useDefaultExcludes>
+
+            <!-- Additional file-to-comment-style mappings -->
+            <mapping>
+              <java>SLASHSTAR_STYLE</java>
+              <xslt>XML_STYLE</xslt>
+            </mapping>
+
+            <includes>
+              <includes>**/src/**/*.java</includes>
+              <includes>**/src/**/*.js</includes>
+              <includes>**/src/**/*.css</includes>
+              <includes>**/src/**/*.xml</includes>
+              <includes>**/*.xml</includes>
+            </includes>
+
+            <excludes>
+              <!-- Project-specific excludes -->
+              <exclude>**/target/**</exclude>
+              <exclude>**/src/main/js/lib/**</exclude>
+              <exclude>**/map/ol.css</exclude>
+            </excludes>
+          </configuration>
+          <inherited>false</inherited>
+          <executions>
+            <execution>
+              <id>update-copyright</id>
+              <phase>generate-sources</phase>
+              <goals>
+                  <goal>format</goal>
+              </goals>
+            </execution>
+            <execution>
+              <id>verify-copyright</id>
+              <phase>verify</phase>
+              <goals>
+                  <goal>check</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+		  </plugins>
+	  </pluginManagement>
+
+    <plugins>
+      <plugin>
+        <groupId>com.mycila</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+  
+</project>

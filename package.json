@@ -1,0 +1,21 @@
+{
+  "name": "iweb-modules",
+  "version": "6.1.0",
+  "description": "Reusable iweb-modules",
+  "scripts": {},
+  "main": "./core/src/main/js/iweb/CoreModule.js",
+  "repository": {
+    "type": "git",
+    "url": "git@llcad-github.llan.ll.mit.edu:nics/iweb-modules.git"
+  },
+  "dependencies": {
+    "@turf/boolean-intersects": "^6.5.0",
+    "loglevel": "^1.7.1",
+    "usng.js": "^0.4.5"
+  },
+  "peerDependencies": {
+    "jquery": "3.x",
+    "ol": "6.x",
+    "proj4": "2.x"
+  }
+}
